@@ -1,0 +1,50 @@
+:root {
+  --bg: #0f1115;
+  --panel: #141821;
+  --text: #e6e6e6;
+  --muted: #a3a3a3;
+  --brand: #6ea8fe;
+  --accent: #9bffb0;
+  --border: #222736;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+.appRoot { display: flex; flex-direction: column; min-height: 100vh; }
+.topbar {
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 16px; background: var(--panel);
+  position: sticky; top: 0; z-index: 40;
+}
+.nav { display: flex; gap: 12px; }
+.navLink { color: var(--muted); text-decoration: none; padding: 6px 8px; border-radius: 6px; }
+.navLink.active, .navLink:hover { color: var(--text); background: #1a2130; }
+.main { padding: 16px; max-width: 980px; width: 100%; margin: 0 auto; }
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.row { display: flex; align-items: center; justify-content: space-between; }
+.input {
+  width: 100%; padding: 12px 14px; background: #0e1421; border: 1px solid var(--border); border-radius: 10px;
+  color: var(--text); outline: none;
+}
+.btn {
+  padding: 10px 14px; border: 1px solid var(--border); background: #1a2130; color: var(--text); border-radius: 10px; cursor: pointer;
+}
+.btn:hover { background: #232c40; }
+.list { display: flex; flex-direction: column; gap: 8px; }
+.listRow { display: grid; grid-template-columns: 1fr max-content; gap: 12px; background: var(--panel); border: 1px solid var(--border); padding: 12px 16px; border-radius: 10px; }
+.muted { color: var(--muted); }
+.xpBar { height: 10px; background: #0e1421; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+.xpFill { height: 100%; background: linear-gradient(90deg, var(--brand), var(--accent)); }
+.attrs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.attrCard { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.attrLabel { font-size: 12px; color: var(--muted); }
+.topbarUser { display: flex; align-items: center; gap: 10px; }
+.avatar { width: 32px; height: 32px; border-radius: 999px; object-fit: cover; background: #0e1421; border: 1px solid var(--border); }
+.title { font-weight: 600; }
+
+
