@@ -1,9 +1,11 @@
 import axios from 'axios'
 
-const api = axios.create({
-  baseURL: 'http://localhost:8000/api/v1',
-  withCredentials: false,
-})
+const base =
+  (import.meta as any).env?.VITE_API_BASE ||
+  (typeof process !== 'undefined' && (process as any).env?.VITE_API_BASE) ||
+  'http://localhost:8000/api/v1'
+
+const api = axios.create({ baseURL: base, withCredentials: false })
 
 api.interceptors.request.use((config) => {
   const token = sessionStorage.getItem('token')

@@ -81,6 +81,11 @@ DATABASES = {
         "PORT": env("POSTGRES_PORT", default="5432"),
     }
 }
+# Support DATABASE_URL override (for Render/Neon etc.)
+DATABASE_URL = env("DATABASE_URL", default=None)
+if DATABASE_URL:
+    import dj_database_url  # type: ignore
+    DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
