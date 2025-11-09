@@ -2,7 +2,6 @@ import axios from 'axios'
 
 const base =
   (import.meta as any).env?.VITE_API_BASE ||
-  (typeof process !== 'undefined' && (process as any).env?.VITE_API_BASE) ||
   'http://localhost:8000/api/v1'
 
 const api = axios.create({ baseURL: base, withCredentials: false })

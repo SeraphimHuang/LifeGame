@@ -1,6 +1,13 @@
 import api from './client'
 
-export type AttributeMapping = { id: number; label: string; weights: { learning: number; stamina: number; charisma: number; craft: number } }
+export type AttributeWeights = {
+  learning: number
+  stamina: number
+  charisma: number
+  craft: number
+  inspiration: number
+}
+export type AttributeMapping = { id: number; label: string; weights: AttributeWeights }
 export async function listMappings() {
   const { data } = await api.get('/config/mapping/')
   return data as AttributeMapping[]

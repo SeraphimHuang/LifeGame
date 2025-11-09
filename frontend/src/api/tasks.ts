@@ -13,6 +13,7 @@ export type TaskDetail = {
   suggested_score: number
   score_override: number | null
   final_score: number
+  attribute_weights?: Record<string, number> | null
   narrative?: string | null
   subtasks: { id: string; title: string; estimate_seconds: number | null; position: number; status: 'todo' | 'done' }[]
 }
